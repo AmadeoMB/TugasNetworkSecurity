@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!-- Bootstrap Core -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Sidebars -->
+    <link rel="stylesheet" href="vendor/css/sidebars.css">
+    <script src="vendor/js/sidebars.js"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/6f2b9e70a5.js"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!-- Hold On JS -->
+    <link rel="stylesheet" href="vendor/css/HoldOn.css">
+    <script src="vendor/js/HoldOn.js"></script>
+
+    <!-- Big Number -->
+    <script src="vendor/js/bignumber.js"></script>
+
+    <!-- math js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.1/math.js" integrity="sha512-AfRcJIj922x/jSJpQLnry0DYIBg6EGCtwk/MiQ6QvDlzb7kNFxH8EdqXLkaXXY3YHQS9FrSb8H7LzuLn0CZQ1A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <!-- Custom -->
+    <link rel="stylesheet" href="vendor/css/custom.css">
+    <script src="vendor/js/custom.js"></script>
+    <style>
+        .bd-placeholder-img {
+            font-size: 1.125rem;
+            text-anchor: middle;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            user-select: none;
+        }
+  
+        @media (min-width: 768px) {
+            .bd-placeholder-img-lg {
+                font-size: 3.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <section class="content">
+        <div class="row">
+            <div class="col-3">
+                <div class="fixed-top d-flex flex-column flex-shrink-0 p-3 text-white bg-dark" style="width: 300px; height: 100vh;">
+                    <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+                        <!-- <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"/></svg> -->
+                        <i class="fas fa-user-lock bi me-2" style="font-size: x-large;"></i>
+                        <span class="fs-4">Web Security</span>
+                    </a>
+                    <hr>
+                    <ul class="nav nav-pills flex-column mb-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link active" open-page="#Home">
+                                <!-- <svg class="bi me-2" width="16" height="16"><use xlink:href="#home"/></svg> -->
+                                <i class="fas fa-home bi me-2" style="font-size: larger;"></i>
+                                Home
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white" open-page="#Keys">
+                                <!-- <svg class="bi me-2" width="16" height="16"><use xlink:href="#grid"/></svg> -->
+                                <i class="fas fa-key bi me-2" style="font-size: larger;"></i>
+                                Generate Keys
+                            </a>
+                        </li>
+                        <!-- <li>
+                            <a href="#" class="nav-link text-white" open-page="#Encrypt">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#speedometer2"/></svg>
+                                <i class="fas fa-lock bi me-2" style="font-size: larger;"></i>
+                                Encrypt
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link text-white" open-page="#Decrypt">
+                                <svg class="bi me-2" width="16" height="16"><use xlink:href="#table"/></svg>
+                                <i class="fas fa-unlock bi me-2" style="font-size: larger;"></i>
+                                Decrypt
+                            </a>
+                        </li> -->
+                        <li>
+                            <a href="#" class="nav-link text-white" open-page="#Sign">
+                                <i class="fas fa-lock bi me-2" style="font-size: larger;"></i>
+                                Sign
+                            </a>
+                        </li>
+                    </ul>
+                    <!-- <hr>
+                    <div class="dropdown">
+                      <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+                        <strong>mdo</strong>
+                      </a>
+                      <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
+                        <li><a class="dropdown-item" href="#">New project...</a></li>
+                        <li><a class="dropdown-item" href="#">Settings</a></li>
+                        <li><a class="dropdown-item" href="#">Profile</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li><a class="dropdown-item" href="#">Sign out</a></li>
+                      </ul>
+                    </div> -->
+                </div>
+            </div>
+            <div class="col-9">
+                <div class="container">
+                    <div class="page page-active" id="Home">
+                        <h1>Home</h1>
+                        <p class="fs-4">
+                            Welcome to Web Security, the world's most popular file encryption and decryption using SHA Algorithm only for you.
+                        </p>
+                        <div class="alert alert-primary">
+                            <b>The RSA Algorithm</b> is an asymmetric cryptography algorithm, this means that it uses a public key and a private key (i.e two different, mathematically linked keys). As their names suggest, a public key is shared publicly, while a private key is secret and must not be shared with anyone.
+                        </div>
+                    </div>
+                    <div class="page" id="Keys">
+                        <h1>Generate Keys</h1>
+                        <p class="fs-4">
+                            Here you need to generate your private keys and public keys. Its pretty simple, just follow this steps.
+                        </p>
+                        <form id="form-generate">
+                            <h4>1. Choose 2 Prime Numbers</h4>
+                            <div class="mb-3">
+                                <label for="pInput">Prime p</label><input class="prime-input form-control" type="number" placeholder="Input prime number for p" name="pInput" id="pInput" data-error="#ErrorPInput">
+                                <sub class="error" id="ErrorPInput"></sub>
+                                <br>
+                                <label for="qInput">Prime q</label><input class="prime-input form-control" type="number" placeholder="Input prime number for q" name="qInput" id="qInput" data-error="#ErrorQInput">
+                                <sub class="error" id="ErrorQInput"></sub>
+                            </div>
+                            <div class="alert alert-danger">
+                                <b>Note:</b> Both p and q <b>MUST</b> be a integer prime numbers otherwise its not gonna work
+                            </div>
+                            <div class="mb-5">
+                                <button id="btnCountN" class="btn btn-primary">Count n</button>
+                                <br>
+                                <p id="txtN" style="display: none;">on = </p>
+                            </div>
+                            <h4>2. Choose 1 Integer number as your public key</h4>
+                            <div class="mb-3">
+                                <label for="eInput">Integer e</label><input class="integer-input form-control" type="number" placeholder="Input prime number for e" name="eInput" id="eInput" data-error="#ErrorQInput">
+                                <sub class="error" id="ErrorEInput"></sub>
+                            </div>
+                            <div class="alert alert-danger">
+                                <b>Note:</b> e <b>MUST</b> be a integer that relatively prime with on otherwise its not gonna work
+                            </div>
+                            <input type="submit" id="btnGenerate" value="Generate" class="btn btn-primary" disabled>
+                        </form>
+                    </div>
+                    <!-- <div class="page" id="Encrypt">
+                        <h1>Encrypt</h1>
+                        <p class="fs-4">
+                            Here you can start encrypting your file. Just upload your file and insert the e and n public key from previous page, and you're good to go.
+                        </p>
+                        <form id="form-encrypt">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Choose file</label>
+                                <input class="form-control" type="file" id="formFile">
+                                <sub class="error" id="ErrorFormFile"></sub>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eEncryptInput">Number e</label><input class="form-control" type="number" placeholder="Input e number from previous page" name="eEncryptInput" id="eEncryptInput" data-error="#ErrorEEncryptInput">
+                                <sub class="error" id="ErrorEEncryptInput"></sub>
+                                <br>
+                                <label for="nEncryptInput">Number n</label><input class="form-control" type="number" placeholder="Input n number from previous page" name="nEncryptInput" id="nEncryptInput" data-error="#ErrorNEncryptInput">
+                                <sub class="error" id="ErrorNEncryptInput"></sub>
+                            </div>
+                            <input type="submit" id="btnEncrypt" value="Encrypt" class="btn btn-primary">
+                        </form>
+                    </div>
+                    <div class="page" id="Decrypt">
+                        <h1>Decrypt</h1>
+                        <div class="container">
+                            <button class="btn btn-primary" id="btnDecrypt">Decrypt</button>
+                        </div>
+                    </div> -->
+                    <div class="page" id="Sign">
+                        <h1>Sign</h1>
+                        <p class="fs-4">
+                            Here you can start encrypting your file. Just upload your file and insert the e and n public key from previous page, and you're good to go.
+                        </p>
+                        <form id="form-encrypt">
+                            <div class="mb-3">
+                                <label for="formFile" class="form-label">Choose file</label>
+                                <input class="form-control" type="file" id="formFile">
+                                <sub class="error" id="ErrorFormFile"></sub>
+                            </div>
+                            <div class="mb-3">
+                                <label for="eEncryptInput">Number e</label><input class="form-control" type="number" placeholder="Input e number from previous page" name="eEncryptInput" id="eEncryptInput" data-error="#ErrorEEncryptInput">
+                                <sub class="error" id="ErrorEEncryptInput"></sub>
+                                <br>
+                                <label for="nEncryptInput">Number n</label><input class="form-control" type="number" placeholder="Input n number from previous page" name="nEncryptInput" id="nEncryptInput" data-error="#ErrorNEncryptInput">
+                                <sub class="error" id="ErrorNEncryptInput"></sub>
+                            </div>
+                            <input type="submit" id="btnEncrypt" value="Encrypt" class="btn btn-primary">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        $(document).ready(function () {
+            // alert("Halo");
+            window.c = [];
+        })
+
+        $('#btnCountN').on('click', function (e) {
+            e.preventDefault();
+            if ($('#pInput').val() == '' || $('#qInput').val() == '') {
+                if ($('#pInput').val() == '') {
+                    $('#ErrorPInput').html('This is required');
+                    $('#ErrorPInput').addClass('show');
+                }
+
+                if ($('#qInput').val() == '') {
+                    $('#ErrorQInput').html('This is required');
+                    $('#ErrorQInput').addClass('show');
+                }
+
+                return;
+            }
+
+            if (!isPrime(parseInt($('#pInput').val()))) {
+                $('#ErrorPInput').html('Number is not a prime number');
+                $('#ErrorPInput').addClass('show');
+                return;
+            }
+
+            if (!isPrime(parseInt($('#qInput').val()))) {
+                $('#ErrorQInput').html('Number is not a prime number');
+                $('#ErrorQInput').addClass('show');
+                return;
+            }
+
+            openLoading('Please wait while we counting n for you');
+
+            var p = $('#pInput').val();
+            var q = $('#qInput').val();
+
+            var n = p * q;
+            var on = (p-1) * (q-1);
+
+            $('#txtN').html('on = ' + on);
+            $('#txtN').css('display', 'block');
+
+            $("#btnGenerate").removeAttr('disabled');
+            stopLoading();
+        });
+
+        $('.nav-link').on('click', function (e) {
+            e.preventDefault();
+
+            // Remove Active on Last Active Nav
+            $('.nav-link.active').addClass('text-white');
+            $('.nav-link').removeClass('active');
+
+            // Add Active on This Nav
+            $(this).addClass('active');
+            $(this).removeClass('text-white');
+
+            // Removing Page Active
+            $('.page').removeClass('page-active');
+
+            // Showing Page
+            $($(this).attr('open-page')).addClass('page-active');
+        });
+
+        $('.prime-input').on('input',function(){
+            $("#btnGenerate").attr('disabled', 'disabled');
+            const value = $(this).val();
+
+            const parsed = parseInt(value);
+            const element = $(this).attr('data-error');
+            if (isPrime(parseInt(parsed))) {
+                $(element).removeClass('show');
+            }
+            else {
+                $(element).html('Number is not a prime number');
+                $(element).addClass('show');
+            }
+        });
+
+        $('#form-generate').on('submit', function (e) {
+            e.preventDefault();
+            if ($('#pInput').val() == '' || $('#qInput').val() == '' || $('#eInput').val() == '') {
+                if ($('#pInput').val() == '') {
+                    $('#ErrorPInput').html('This is required');
+                    $('#ErrorPInput').addClass('show');
+                }
+
+                if ($('#qInput').val() == '') {
+                    $('#ErrorQInput').html('This is required');
+                    $('#ErrorQInput').addClass('show');
+                }
+
+                if ($('#eInput').val() == '') {
+                    $('#ErrorEInput').html('This is required');
+                    $('#ErrorEInput').addClass('show');
+                }
+
+                return;
+            }
+
+            if (!isPrime(parseInt($('#pInput').val()))) {
+                $('#ErrorPInput').html('Number is not a prime number');
+                $('#ErrorPInput').addClass('show');
+                return;
+            }
+
+            if (!isPrime(parseInt($('#qInput').val()))) {
+                $('#ErrorQInput').html('Number is not a prime number');
+                $('#ErrorQInput').addClass('show');
+                return;
+            }
+
+
+            var p = $('#pInput').val();
+            var q = $('#qInput').val();
+
+            var n = p * q;
+            var on = (p-1) * (q-1);
+
+            var e = $('#eInput').val();
+            
+            var count = 0;
+            var pos = e;
+            if (e < on) {
+                pos = on;
+            }
+            for (let index = 1; index <= pos; index++) {
+                if (e % index == 0 && on % index == 0) {
+                    count++;
+                }
+            }
+            if (count > 1) {
+                $('#ErrorEInput').html('This must be relatively prime with on');
+                $('#ErrorEInput').addClass('show');
+                
+                return;
+            }
+            $('#ErrorEInput').removeClass('show');
+
+            openLoading('Please wait while we generating your number');
+            
+            var k = 1;
+            var d = (1 + (k * on)) / e;
+            while (d % 1 != 0) {
+                k++;
+                d = (1 + (k * on)) / e;
+            }
+
+            console.log('Public Key: (' + e + ', ' + n +')' );
+            console.log('Private Key: (' + d + ', ' + n +')' );
+
+            stopLoading();
+        });
+
+        $('#form-encrypt').on('submit', function (e) {
+            e.preventDefault();
+
+            if ($('#eEncryptInput').val() == '' || $('#nEncryptInput').val() == '') {
+                if ($('#eEncryptInput').val() == '') {
+                    $('#ErrorEEncryptInput').html('This is required');
+                    $('#ErrorEEncryptInput').addClass('show');
+                }
+
+                if ($('#nEncryptInput').val() == '') {
+                    $('#ErrorNEncryptInput').html('This is required');
+                    $('#ErrorNEncryptInput').addClass('show');
+                }
+
+                return;
+            }
+
+            var e = $('#eEncryptInput').val();
+            var n = $('#nEncryptInput').val();
+            var files = $('#formFile').prop('files')[0];
+            var reader = new FileReader();
+            reader.onload = function () {
+                openLoading('Please wait while we encrypting your file');
+
+                var string = reader.result;
+                string = string.replace(' ', '');
+                var persentage = 100 / string.length;
+                var timelaps = 10000 / string.length;
+                timelaps = Math.round(timelaps);
+                if(timelaps > 50){
+                    timelaps = 50;
+                }
+                let index = 0;
+                window.intv = setInterval(function () {
+                    if (string.length <= index) {
+                        clearInterval(window.intv);
+                        stopLoading();
+                        return;
+                    }
+
+                    const m = string.charCodeAt(index);
+                    const count = (BigInt(m) ** BigInt(e)) % BigInt(n);
+                    window.c[index] = count;
+                    // console.log(index + ': ' + count);
+
+                    var progress = persentage * (index + 1);
+                    setPersentage(progress);
+                    index++;
+                }, timelaps);
+
+            };
+            if(files) {
+                // This does not return the text. It just starts reading.
+                // The onload handler is triggered when it is done and the result is available.
+                reader.readAsText(files);
+            }
+        });
+
+        $('#btnDecrypt').on('click', function(){
+            var plaintext = '';
+            for (let index = 0; index < window.c.length; index++) {
+                const element = window.c[index];
+                const m = (BigInt(element) ** BigInt(1019)) % BigInt(3337);
+                
+                plaintext += String.fromCharCode(parseInt(m));
+            }
+            console.log(plaintext);
+
+            // console.log((BigInt(328) ** BigInt(1019)) % BigInt(3337));
+        });
+    </script>
+</body>
+</html>
